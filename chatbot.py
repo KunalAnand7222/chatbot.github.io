@@ -1,22 +1,23 @@
 import streamlit as st
 import google.generativeai as genai
 # importing library
-import markdown
 st.set_page_config(page_title="AI Chatbot", page_icon="🤖", layout="centered")
 # st.image("image.png",use_column_width=True)
 
 st.title("Beginner ChatBot")
 st.sidebar.radio("Home",["Home page"])
-# st.write("""
-# - This app allows you to interact with an AI chatbot powered by Generative AI models.
-# - You can ask various types of questions, convert audio or image files into text, and even generate code.
-# - You can work with audio and video files. For example, you can convert an audio file to text or generate a transcript. You can also work with timestamps in the audio file for precise editing.
-# - You can extract text from images, making it easy to digitize printed content or handwritten notes.
-# - You can generate code from text in any programming language you want, whether it's Python, JavaScript, or C++.
-# - The chatbot is designed to assist you with educational inquiries, programming challenges, and general knowledge questions.
-# - With a user-friendly interface, you can easily navigate through different functionalities without any hassle.
-# - Explore the various options through the sidebar and unlock the full potential of this AI-powered tool!
-# """)
+but=st.sidebar.button("About home")
+if but:
+    st.write("""
+- This app allows you to interact with an AI chatbot powered by Generative AI models.
+- You can ask various types of questions, convert audio or image files into text, and even generate code.
+- You can work with audio and video files. For example, you can convert an audio file to text or generate a transcript. You can also work with timestamps in the audio file for precise editing.
+- You can extract text from images, making it easy to digitize printed content or handwritten notes.
+- You can generate code from text in any programming language you want, whether it's Python, JavaScript, or C++.
+- The chatbot is designed to assist you with educational inquiries, programming challenges, and general knowledge questions.
+- With a user-friendly interface, you can easily navigate through different functionalities without any hassle.
+- Explore the various options through the sidebar and unlock the full potential of this AI-powered tool!
+""")
 
 
 # st.header("Welcome to AI ChatBot")
@@ -29,13 +30,13 @@ if "history" not in st.session_state:
 if list=="List of models":
     but=st.sidebar.button("Show")
     if but:
-        st.write(f"*{"Here is the list of all models"}*")
+        st.write(f"*{'Here is the list of all models'}*")
         for i in genai.list_models():
             st.write(f"**{i.name}**")
 if list=="List of files":
     but=st.sidebar.button("Show")
     if but:
-        st.write(f"*{"Here is the list of all files uploaded using this api"}*")
+        st.write(f"*{'Here is the list of all files uploaded using this api'}*")
         for i in genai.list_files():
             st.write(f"**{i.name}**")
 process=st.sidebar.radio("Choose",["Question answer","Image to Text","Audio to text","Text to code","Real Time Image To Text"])

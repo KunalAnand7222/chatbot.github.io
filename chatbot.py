@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 # importing library
-st.set_page_config(page_title="AI Chatbot", page_icon="🤖", layout="centered")
+st.set_page_config(page_title="Kunal Chatbot", page_icon="🤖", layout="centered")
 # st.image("image.png",use_column_width=True)
 
 st.title("Beginner ChatBot")

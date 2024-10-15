@@ -1,3 +1,2 @@
 streamlit
-google.generativeai
-IPython.display
+google-generativeai
